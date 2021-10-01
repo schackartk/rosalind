@@ -6,5 +6,15 @@
 
 # Create parser object -------------------------------------------------------------------
 
+parser <- ArgumentParser()
 
+parser$add_argument("-v",
+                    "--verbose",
+                    action="store_true",
+                    help="Print extra output")
 
+args <- parser$parse_args()
+
+if ( args$verbose ) {
+  print("verbose")
+}
