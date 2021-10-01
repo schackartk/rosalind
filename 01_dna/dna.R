@@ -4,17 +4,25 @@
 # Date   : 2021-09-30
 # Purpose: Do some stuff
 
-# Create parser object -------------------------------------------------------------------
+# Library Calls  ------------------------------------------------------------
+
+library(argparse)
+
+
+# Argument Parsing ----------------------------------------------------------
 
 parser <- ArgumentParser()
 
 parser$add_argument("-v",
                     "--verbose",
                     action="store_true",
-                    help="Print extra output")
+                    help="Print extras")
 
 args <- parser$parse_args()
 
+
+# Main ----------------------------------------------------------------------
 if ( args$verbose ) {
-  print("verbose")
+    print("verbose activated")
 }
+
