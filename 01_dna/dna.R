@@ -23,7 +23,7 @@ args <- parser$parse_args()
 
 # Main ----------------------------------------------------------------------
 if ( args$verbose ) {
-    print("verbose activated")
+    print("Verbose activated")
 } else {
   print("Not verbose")
 }
