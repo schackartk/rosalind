@@ -1,5 +1,4 @@
 .PHONY: test
 
 test:
-	Rscript -e 'lintr::lint("dna.R")'
 	Rscript -e 'testthat::test_dir("tests/testthat")'
