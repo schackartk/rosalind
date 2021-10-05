@@ -28,3 +28,8 @@ The porogram should also accept files that contain DNA sequences as input.
 $ ./dna.R tests/inputs/input1.txt
 1 2 3 4
 ```
+
+To get started, you can use `new.R`. If it is not added you your path, you can run:
+
+```
+$ ../bin/new.R --purpose "Calculate tetranucleotide frequency" dna.R
