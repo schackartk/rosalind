@@ -18,7 +18,7 @@ library(stringr)
 #'
 #' @return args
 get_args <- function() {
-  parser <- argparse::ArgumentParser()
+  parser <- argparse::ArgumentParser(description = "Create a new R file")
   
   rc_file <- file.path(fs::path_home(), ".new.R")
   defaults <- get_defaults(rc_file)
