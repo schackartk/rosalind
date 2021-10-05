@@ -2,7 +2,8 @@
 
 # Requirements for this repository
 
-install.packages("argparse")
-install.packages("testthat")
-install.packages("stringr")
-install.packages("lintr")
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load("argparse",
+               "lintr",
+               "stringr",
+               "testthat")
