@@ -1,4 +1,4 @@
-# Couting tetranucleotide frequency
+# Counting tetranucleotide frequency
 
 http://rosalind.info/problems/dna/
 
@@ -15,14 +15,14 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
-The progran should print the frequencies of the bases A, C, G, and T.
+The progran should print the frequencies of the bases A, C, G, and T (in that order).
 
 ```
 $ ./dna.R AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
 20 12 17 21
 ```
 
-The porogram should also accept files that contain DNA sequences as input
+The porogram should also accept files that contain DNA sequences as input.
 
 ```
 $ ./dna.R tests/inputs/input1.txt
