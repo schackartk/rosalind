@@ -5,3 +5,4 @@
 install.packages("argparse")
 install.packages("testthat")
 install.packages("stringr")
+install.packages("lintr")
