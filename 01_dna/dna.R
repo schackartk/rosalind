@@ -7,23 +7,30 @@
 # Library Calls  ------------------------------------------------------------
 
 library(argparse)
+library(stringr)
 
 
 # Argument Parsing ----------------------------------------------------------
 
 parser <- ArgumentParser()
 
-parser$add_argument("-v",
-                    "--verbose",
-                    action = "store_true",
-                    help = "Print extras")
+parser$add_argument("dna",
+                    metavar = "DNA",
+                    help = "Input DNA sequence",
+                    type = "character")
 
 args <- parser$parse_args()
 
 
 # Main ----------------------------------------------------------------------
-if (args$verbose) {
-    print("Verbose activated")
-} else {
-  print("Not verbose")
-}
+
+in_dna <- args$dna
+
+counts <- list(
+    "A" = str_count(in_dna, "A"),
+    "C" = str_count(in_dna, "C"),
+    "T" = str_count(in_dna, "T"),
+    "G" = str_count(in_dna, "G")
+)
+
+print(str_glue("{counts$A} {counts$C} {counts$G} {counts$T}"))
