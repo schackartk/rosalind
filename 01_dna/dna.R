@@ -15,16 +15,15 @@ parser <- ArgumentParser()
 
 parser$add_argument("-v",
                     "--verbose",
-                    action="store_true",
-                    help="Print extras")
+                    action = "store_true",
+                    help = "Print extras")
 
 args <- parser$parse_args()
 
 
 # Main ----------------------------------------------------------------------
-if ( args$verbose ) {
+if (args$verbose) {
     print("Verbose activated")
 } else {
   print("Not verbose")
 }
-
