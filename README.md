@@ -50,6 +50,8 @@ All of the challenges will result in scripts that are executable *from the comma
 
 To accomplish this, we will use the package `argparse` which is modeled after the Python package of the same name. This allows programs to take arguments that affect their behavior (again, instead of hard-coded inflexible code).
 
+To allow you to focus on writing code and not retyping boiler-plate stuff, I have provided a template generating script located at [bin/new.R](bin/new.R). This will create a script template that uses argparse.
+
 ### Testing
 
 Additionally, all programs will be evaluated using automated testing (via the package `testthat`). Testing is crucial to software development, and is often overlooked by typical useRs.
