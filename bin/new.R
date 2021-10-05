@@ -80,6 +80,8 @@ main <- function() {
   content <- get_script(args)
   
   write(content, file = program)
+
+  print(stringr::str_glue("Done. See new script {program}."))
 }
 
 # Defaults -------------------------------------------------------------------
