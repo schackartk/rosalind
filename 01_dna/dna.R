@@ -12,26 +12,48 @@ library(stringr)
 
 # Argument Parsing ----------------------------------------------------------
 
-parser <- ArgumentParser()
+#' Parse Arguments
+#'
+#' Parse command line arguments using argparse.
+#'
+#' @return args
+get_args <- function() {
+  parser <- argparse::ArgumentParser()
 
-parser$add_argument("dna",
-                    metavar = "DNA",
-                    help = "Input DNA sequence",
-                    type = "character")
+  parser$add_argument("dna",
+                      metavar = "DNA",
+                      help = "Input DNA sequence",
+                      type = "character")
 
-args <- parser$parse_args()
+  args <- parser$parse_args()
 
-if (file.exists(args$dna)) {
-  args$dna <- readr::read_file(args$dna)
+  if (file.exists(args$dna)) {
+    args$dna <- readr::read_file(args$dna)
+  }
+  
+  return(args)
+  
 }
-
 
 # Main ----------------------------------------------------------------------
 
-counts <- list()
+#' Main Function
+#'
+#' @return
+main <- function() {
 
-for (nt in c("A", "C", "G", "T")) {
-  counts[nt] = str_count(args$dna, nt)
+  args <- get_args()
+
+  counts <- list()
+
+  for (nt in c("A", "C", "G", "T")) {
+    counts[nt] <- stringr::str_count(args$dna, nt)
+  }
+
+  print(stringr::str_glue("{counts$A} {counts$C} {counts$G} {counts$T}"))
 }
 
-print(str_glue("{counts$A} {counts$C} {counts$G} {counts$T}"))
+# Call Main -----------------------------------------------------------------
+if (!interactive()) {
+  main()
+}
