@@ -33,3 +33,20 @@ To get started, you can use `new.R`. If it is not added you your path, you can r
 
 ```
 $ ../bin/new.R --purpose "Calculate tetranucleotide frequency" dna.R
+```
+
+A passing test suite looks like this:
+
+```
+$ make test
+Rscript -e 'testthat::test_dir("tests/testthat")'
+✔ | F W S  OK | Context
+✔ |        10 | dna [55.0s]                                                                                                                
+
+══ Results ════════════════════════════════════════════════════════
+Duration: 55.1 s
+
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 10 ]
+
+Nice code.
+```
