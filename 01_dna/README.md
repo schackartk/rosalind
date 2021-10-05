@@ -21,3 +21,10 @@ The progran should print the frequencies of the bases A, C, G, and T.
 $ ./dna.R AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC
 20 12 17 21
 ```
+
+The porogram should also accept files that contain DNA sequences as input
+
+```
+$ ./dna.R tests/inputs/input1.txt
+1 2 3 4
+```
