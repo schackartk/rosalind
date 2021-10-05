@@ -21,16 +21,17 @@ parser$add_argument("dna",
 
 args <- parser$parse_args()
 
+if (file.exists(args$dna)) {
+  args$dna <- readr::read_file(args$dna)
+}
+
 
 # Main ----------------------------------------------------------------------
 
-in_dna <- args$dna
+counts <- list()
 
-counts <- list(
-    "A" = str_count(in_dna, "A"),
-    "C" = str_count(in_dna, "C"),
-    "T" = str_count(in_dna, "T"),
-    "G" = str_count(in_dna, "G")
-)
+for (nt in c("A", "C", "G", "T")) {
+  counts[nt] = str_count(args$dna, nt)
+}
 
 print(str_glue("{counts$A} {counts$C} {counts$G} {counts$T}"))
