@@ -4,6 +4,7 @@
 
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load("argparse",
+               "fs",
                "lintr",
                "stringr",
                "readr",
